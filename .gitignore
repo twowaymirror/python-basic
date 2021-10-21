@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,3 +128,67 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+=======
+# Temporary files/buffers
+*.swp
+*.tmp
+
+# Visual Studio Code
+*.vscode
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.mypy_cache
+.coverage
+htmlcov/*
+.pytest_cache
+
+#Ignore component_test_build logs
+build.log
+build.log.*
+cloudsim.log
+db.json.run
+tester*.log
+ihu_uds.log
+
+# eclipse
+**/.settings
+.project
+.cproject
+## Plugins
+.pydevproject
+.classpath
+
+# Meld mergetool
+*.orig
+
+#PyCharm / Android Studio / Jetbrains Tools
+*.iml
+.idea
+.externalNativeBuild
+.DS_Store
+
+#Java
+.class
+
+#Sublime, workspace and project settings
+*.sublime-project
+*.sublime-workspace
+
+#Gradle
+.gradle
+local.properties
+
+# SWDL tools
+**/one_update_kpi.json
+**/vbfs_over_doip.log
+
+# CMake typical build directories
+cmake-build-*
+
+# Ignore mocked out folders
+**/out/**
+
+>>>>>>> Add gitignore file and tests for pytest marks
