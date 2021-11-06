@@ -1,0 +1,120 @@
+{
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "simple": {
+            "format": "%(asctime)s %(name)016s - %(levelname)07s - %(message)s",
+            "datefmt": "%H:%M:%S"
+        },
+        "testRunner_formatter": {
+            "format": "%(name)s>> %(message)s"
+        }
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "level": "INFO",
+            "formatter": "simple",
+            "stream": "ext://sys.stdout"
+        },
+        "console_verbose": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "simple",
+            "stream": "ext://sys.stdout"
+        },
+        "console_vts": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "testRunner_formatter",
+            "stream": "ext://sys.stdout"
+        },
+        "console_behave": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "testRunner_formatter",
+            "stream": "ext://sys.stdout"
+        },
+        "file_handler": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "DEBUG",
+            "formatter": "simple",
+            "filename": "tester_will_be_auto_replaced.log",
+            "maxBytes": 10485760,
+            "backupCount": 10,
+            "encoding": "utf8"
+        },
+        "msgbus_file_handler": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "DEBUG",
+            "formatter": "simple",
+            "filename": "messagebus.log",
+            "maxBytes": 10485760,
+            "backupCount": 10,
+            "encoding": "utf8"
+        },
+        "test_file_handler": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "DEBUG",
+            "formatter": "simple",
+            "filename": "Test.log",
+            "maxBytes": 10485760,
+            "backupCount": 10,
+            "encoding": "utf8"
+        }
+    },
+    "loggers": {
+        "vts": {
+            "level": "DEBUG",
+            "handlers": [
+                "console_vts"
+            ],
+            "propagate": 0
+        },
+        "behave": {
+            "level": "DEBUG",
+            "handlers": [
+                "console_behave"
+            ],
+            "propagate": 0
+        },
+        "repo_sync": {
+            "level": "DEBUG",
+            "handlers": [
+                "console_verbose",
+                "file_handler"
+            ]
+        },
+        "test_manager.result_handlers.test_visualisation": {
+            "level": "DEBUG",
+            "handlers": [
+                "console",
+                "file_handler"
+            ]
+        },
+        "logging_test": {
+            "level": "WARNING",
+            "handlers": [
+                "console"
+            ],
+            "propagate": 0
+        },
+        "logging_test.child_module": {
+            "level": "DEBUG",
+            "handlers": [
+                "console"
+            ],
+            "propagate": 0
+        }
+
+    },
+    "root": {
+        "level": "DEBUG",
+        "handlers": [
+            "console",
+            "file_handler",
+            "test_file_handler"
+
+        ]
+    }
+}

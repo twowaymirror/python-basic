@@ -1,0 +1,71 @@
+{
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "simple": {
+            "format": "%(asctime)s %(name)016s - %(levelname)07s - %(message)s",
+            "datefmt": "%H:%M:%S"
+        },
+        "testRunner_formatter": {
+            "format": "%(name)s>> %(message)s"
+        }
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "simple",
+            "stream": "ext://sys.stdout"
+        },
+        "file_handler": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "WARNING",
+            "formatter": "simple",
+            "filename": "tester_will_be_auto_replaced.log",
+            "maxBytes": 10485760,
+            "backupCount": 10,
+            "encoding": "utf8"
+        }
+    },
+    "loggers": {
+        "testing_logging": {
+            "level": "WARNING",
+            "handlers": [
+                "console"
+            ],
+            "qualname": "testing_logging",
+            "propagate": 0
+        },
+        "child_module": {
+            "level": "DEBUG",
+            "qualname": "child_module",
+            "handlers": [
+                "console"
+            ],
+            "propagate": 0
+        },
+        "second_child": {
+            "level": "DEBUG",
+            "qualname": "child_module",
+            "handlers": [
+                "console"
+            ],
+            "propagate": 0
+        },
+        "third_child": {
+            "level": "WARNING",
+            "qualname": "child_module",
+            "handlers": [
+                "console"
+            ],
+            "propagate": 0
+    }
+    },
+    "root": {
+        "level": "DEBUG",
+        "handlers": [
+            "console",
+            "file_handler"
+        ]
+    }
+}
