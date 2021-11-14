@@ -26,6 +26,7 @@ Playing around with some Python concepts
 
 [YouTube guide on how to add modules]: https://www.youtube.com/watch?v=b4iFyrLQQh4
 [YouTube guide on how to add modules]
+
 ### Installed packages for Sphinx
 
 * pip install sphinx
@@ -33,5 +34,15 @@ Playing around with some Python concepts
 
 ### Using Sphinx for generating documentation
 
-sphinx-apidoc --maxdepth 6 --force --output-dir docs/src ..
-make --always-make html
+It is important that there are __init__.py in the folders that is going to be part of the 
+documentation.
+
+sphinx-apidoc --maxdepth 6 --force --output-dir docs/src .
+
+stopped using: make --always-make html
+started using: sphinx-build -b html source build
+
+***Good guides when troubleshooting***
+
+[stack1]: https://stackoverflow.com/questions/59903051/sphinxs-autodocs-automodule-having-apparently-no-effect/59951675#59951675
+[stack1]
