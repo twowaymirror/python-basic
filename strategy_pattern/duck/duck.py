@@ -8,10 +8,12 @@ class FlyBehaviour(ABC):
         """Method for different fly behaviour"""
 
 class FlyWithWings(FlyBehaviour):
+    """ Concrete class of FlyBehaviour"""
     def fly(self):
         return "Flying"
 
 class FlyNoWay(FlyBehaviour):
+    """ Concrete class of FlyBehaviour"""
     def fly(self):
         return "Not lifting off!!!"
 
@@ -23,20 +25,23 @@ class QuackBehaviour(ABC):
         """Method for different quack behaviour"""
 
 class Quack(QuackBehaviour):
+    """ Concrete class of QuackBehaviour"""
     def quack(self):
         return "Quacking like a duck!!"
 
 class Squeak(QuackBehaviour):
+    """ Concrete class of QuackBehaviour"""
     def quack(self):
         return "Squeking like something that squeaks"
     
 class MuteQuack(QuackBehaviour):
+    """ Concrete class of QuackBehaviour"""
     def quack(self):
         return "Silence"
 
 
 class Duck():
-    """ The Duck class is the Conctext
+    """ The Duck class is the Conctext class
         Generating different behaviour depending on strategy.
         The Duck class is unaware of what behaviour that will be used, decoupling the Duck from
         its behaviour.

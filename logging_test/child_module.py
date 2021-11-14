@@ -5,6 +5,7 @@ from pathlib import Path
 logger = logging.getLogger(__name__)
 
 def logging_test_child():
+    """ Testing the logging functionality with child module, with different settings"""
     print("Testing the logging module")
     # logger.setLevel("WARNING")
     logger.info(f"This is name: {__name__}")

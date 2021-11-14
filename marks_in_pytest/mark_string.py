@@ -3,6 +3,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 def mark_test():
+    """ Trivial check of how to build PyTest marks list"""
     tag_list = ["first", "second", "third"]
 
     mark_string = " -m"

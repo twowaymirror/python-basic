@@ -30,3 +30,8 @@ Playing around with some Python concepts
 
 * pip install sphinx
 * pip install myst-parser
+
+### Using Sphinx for generating documentation
+
+sphinx-apidoc --maxdepth 6 --force --output-dir docs/src ..
+make --always-make html

@@ -24,6 +24,7 @@ from sub_logg import third_child
 #     logging.error('And non-ASCII stuff, too, like Øresund and Malmö')
 
 def read_json_config():
+    """ Function for read a json file for the logging config"""
     print(f"Testing to use a json config file")
     with open("logging.json", "rt") as js:
         config = json.load(js)
